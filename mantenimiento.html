@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Montaña Drinks · Volvemos pronto</title>
+    <meta name="description" content="Estamos trabajando en el sitio de Montaña Drinks. Volvemos muy pronto con frío de montaña en cada vaso.">
+    <meta name="robots" content="noindex">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800;900&family=Hanken+Grotesk:wght@400;500;700&display=swap">
+    <style>
+         :root {
+            --bg: #000;
+            --fg: #f5f2ea;
+            --muted: #a6a6a6;
+            --line: #2a2a2a;
+            --brand: #ffd21a;
+            --brand-ink: #111;
+            --font-display: 'Big Shoulders Display', 'Arial Narrow', Impact, sans-serif;
+            --font-body: 'Hanken Grotesk', system-ui, -apple-system, 'Segoe UI', sans-serif;
+            color-scheme: dark;
+            box-sizing: border-box;
+            padding-top: env(safe-area-inset-top, 0px);
+            padding-bottom: env(safe-area-inset-bottom, 0px);
+        }
+        
+        *,
+        *::before,
+        *::after {
+            box-sizing: inherit;
+        }
+        
+        html {
+            background: var(--bg);
+            height: 100%;
+        }
+        
+        body {
+            margin: 0;
+            min-height: 100%;
+            background: var(--bg);
+            color: var(--fg);
+            font: 400 17px/1.55 var(--font-body);
+            -webkit-font-smoothing: antialiased;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0 0 auto;
+            height: env(safe-area-inset-top, 0px);
+            background: var(--bg);
+            z-index: 10;
+        }
+        
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+        
+        h1 {
+            font-family: var(--font-display);
+            text-transform: uppercase;
+            margin: 0;
+            text-wrap: balance;
+        }
+        
+        p {
+            margin: 0;
+        }
+        
+        :focus-visible {
+            outline: 3px solid var(--brand);
+            outline-offset: 3px;
+        }
+        
+        main {
+            flex: 1;
+            width: 100%;
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: clamp(28px, 5vw, 64px) max(20px, env(safe-area-inset-left, 0px)) 0 max(20px, env(safe-area-inset-right, 0px));
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 28px;
+            align-items: center;
+        }
+        
+        @media (min-width: 900px) {
+            main {
+                grid-template-columns: 1.05fr .95fr;
+                gap: 40px;
+            }
+        }
+        
+        .logo {
+            height: 76px;
+            width: auto;
+        }
+        
+        .eyebrow {
+            margin-top: 36px;
+            font-weight: 700;
+            font-size: .85rem;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+            color: var(--brand);
+        }
+        
+        h1 {
+            margin-top: 14px;
+            font-weight: 900;
+            font-size: clamp(3.4rem, 10vw, 7.4rem);
+            line-height: .88;
+        }
+        
+        h1 span {
+            display: block;
+            color: var(--brand);
+        }
+        
+        .lead {
+            margin-top: 22px;
+            max-width: 36ch;
+            font-size: 1.15rem;
+            color: #d6d3cb;
+        }
+        
+        .progress {
+            margin-top: 30px;
+            max-width: 360px;
+            height: 6px;
+            background: var(--line);
+            overflow: hidden;
+        }
+        
+        .progress i {
+            display: block;
+            height: 100%;
+            width: 40%;
+            background: var(--brand);
+            animation: slide 2.4s ease-in-out infinite;
+        }
+        
+        @keyframes slide {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(250%);
+            }
+        }
+        
+        .cta {
+            margin-top: 30px;
+            display: none;
+        }
+        
+        .cta.on {
+            display: block;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 52px;
+            padding: 0 28px;
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: 1.25rem;
+            letter-spacing: .04em;
+            text-transform: uppercase;
+            text-decoration: none;
+            background: var(--brand);
+            color: var(--brand-ink);
+            border: 2px solid var(--brand);
+            transition: transform .15s ease;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+        
+        .media {
+            justify-self: center;
+            width: min(100%, 520px);
+        }
+        
+        .media img {
+            width: 100%;
+            max-height: 74vh;
+            object-fit: contain;
+            animation: drift 7s ease-in-out infinite;
+        }
+        
+        @keyframes drift {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+        
+        .ridge {
+            display: block;
+            width: 100%;
+            height: 56px;
+            margin-top: 32px;
+        }
+        
+        .ridge path {
+            fill: none;
+            stroke: var(--brand);
+            stroke-width: 3;
+            vector-effect: non-scaling-stroke;
+            stroke-linejoin: round;
+        }
+        
+        footer {
+            border-top: 1px solid var(--line);
+            padding: 18px max(20px, env(safe-area-inset-left, 0px));
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 8px;
+            color: var(--muted);
+            font-size: .9rem;
+        }
+        
+        @media (prefers-reduced-motion: reduce) {
+            .media img,
+            .progress i {
+                animation: none;
+            }
+            .progress i {
+                width: 60%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <section>
+            <img class="logo" src="img/logo.svg" width="600" height="502" alt="Montaña Drinks">
+            <p class="eyebrow">Estamos trabajando en el sitio</p>
+            <h1>Volvemos <span>muy pronto</span></h1>
+            <p class="lead">Estamos preparando algo nuevo. Frío de montaña en cada vaso, con una mejor experiencia para ti.</p>
+            <div class="progress" role="presentation"><i></i></div>
+            <div class="cta" id="cta"><a class="btn" id="wa" href="#">Escríbenos por WhatsApp</a></div>
+        </section>
+        <div class="media">
+            <img src="img/vaso.jpg" width="1000" height="1061" alt="Vaso transparente de Montaña Drinks con gotas de agua sobre fondo negro">
+        </div>
+    </main>
+
+    <svg class="ridge" viewBox="0 0 1200 56" preserveAspectRatio="none" aria-hidden="true">
+  <path d="M0 52 L120 30 L190 42 L330 8 L430 38 L520 22 L640 48 L780 14 L880 40 L1010 20 L1110 44 L1200 28"/>
+</svg>
+
+    <footer>
+        <span>Vanmartc Developments © 2026 Montaña Drinks</span>
+        <span>Sitio en construcción</span>
+    </footer>
+
+    <script>
+        // Opcional: número de WhatsApp con indicativo y sin signos (ejemplo: 573001234567).
+        // Si se llena, aparece el botón "Escríbenos por WhatsApp".
+        var WHATSAPP = '';
+        if (WHATSAPP) {
+            var a = document.getElementById('wa');
+            a.href = 'https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent('Hola, quiero información de Montaña Drinks.');
+            a.target = '_blank';
+            a.rel = 'noopener';
+            document.getElementById('cta').classList.add('on');
+        }
+    </script>
+</body>
+
+</html>
