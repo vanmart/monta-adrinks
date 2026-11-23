@@ -1,0 +1,25 @@
+# Sistema operativo macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Sistema operativo Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Editores e IDEs
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Archivos temporales y respaldos
+*.tmp
+*.bak
+*.swp
+*~
+indexdisrty.html
