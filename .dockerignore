@@ -1,0 +1,19 @@
+# Git y archivos del sistema
+.git
+.gitignore
+.DS_Store
+*/.DS_Store
+
+# Documentación y respaldos
+*.md
+*.bak
+*.tmp
+indexdisrty.html
+
+# Archivos de Docker
+Dockerfile
+.dockerignore
+compose.yaml
+docker-compose.yml
+docker-compose.yaml
+

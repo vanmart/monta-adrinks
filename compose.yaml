@@ -1,0 +1,8 @@
+services:
+  montana-drinks:
+    build: .
+    container_name: montana-drinks-web
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+
