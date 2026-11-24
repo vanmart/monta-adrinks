@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://montañadrinks.com/sitemap.xml
-
+Sitemap: https://xn--montaadrinks-ehb.com/sitemap.xml
