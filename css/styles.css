@@ -250,6 +250,24 @@
             color: var(--brand-ink);
         }
 
+        .currency-toggle .currency-spin {
+            display: inline-block;
+            width: 1.1em;
+            height: 1.1em;
+            margin-left: .45em;
+            vertical-align: middle;
+            border: 2px solid currentColor;
+            border-top-color: transparent;
+            border-radius: 50%;
+            animation: currency-spin .8s linear infinite;
+        }
+
+        @keyframes currency-spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
         @media (max-width: 620px) {
             .nav a:not(.btn-mini) {
                 display: none;
